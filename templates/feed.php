@@ -20,7 +20,7 @@
                                         <div class="post__info">
                                             <b class="post__author-name"><?= $post['login'] ?></b>
                                             <span
-                                                class="post__time"><?= get_relative_date($post['date']) ?> назад</span>
+                                                    class="post__time"><?= get_relative_date($post['date']) ?> назад</span>
                                         </div>
                                     </a>
                                 </header>
@@ -35,15 +35,16 @@
                                             <a class="post__indicator post__indicator--likes <?= $post['is_liked'] ? 'post__indicator--likes-active' : '' ?> button"
                                                href="/like.php?post_id=<?= $post['post_id'] ?>" title="Лайк">
                                                 <svg
-                                                    class="post__indicator-icon <?= $post['is_liked'] ? 'post__indicator-icon--like-active' : '' ?>"
-                                                    width="20" height="17">
+                                                        class="post__indicator-icon <?= $post['is_liked'] ? 'post__indicator-icon--like-active' : '' ?>"
+                                                        width="20" height="17">
                                                     <use
-                                                        xlink:href="<?= $post['is_liked'] ? '#icon-heart-active' : '#icon-heart' ?>"></use>
+                                                            xlink:href="<?= $post['is_liked'] ? '#icon-heart-active' : '#icon-heart' ?>"></use>
                                                 </svg>
                                                 <span><?= $post['likes_count'] ?></span>
                                                 <span class="visually-hidden">количество лайков</span>
                                             </a>
-                                            <a class="post__indicator post__indicator--comments button" href="/post.php?post_id=<?= $post['post_id'] ?>"
+                                            <a class="post__indicator post__indicator--comments button"
+                                               href="/post.php?post_id=<?= $post['post_id'] ?>"
                                                title="Комментарии">
                                                 <svg class="post__indicator-icon" width="19" height="17">
                                                     <use xlink:href="#icon-comment"></use>
@@ -51,7 +52,8 @@
                                                 <span><?= $post['comments_count'] ?></span>
                                                 <span class="visually-hidden">количество комментариев</span>
                                             </a>
-                                            <a class="post__indicator post__indicator--repost button" href="/repost.php?post_id=<?= $post['post_id'] ?>"
+                                            <a class="post__indicator post__indicator--repost button"
+                                               href="/repost.php?post_id=<?= $post['post_id'] ?>"
                                                title="Репост">
                                                 <svg class="post__indicator-icon" width="19" height="17">
                                                     <use xlink:href="#icon-repost"></use>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * MySQL settings
  */
@@ -7,6 +8,6 @@ return [
         'host' => '',
         'user' => '',
         'password' => '',
-        'database' => ''
-    ]
+        'database' => '',
+    ],
 ];

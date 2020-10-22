@@ -29,7 +29,7 @@
                                 </header>
                                 <div class="post__main">
                                     <?= include_template('post-card-main.php', [
-                                        'post' => $post
+                                        'post' => $post,
                                     ]) ?>
                                 </div>
                                 <footer class="post__footer">
@@ -44,7 +44,8 @@
                                                 <span><?= $post['likes_count'] ?></span>
                                                 <span class="visually-hidden">количество лайков</span>
                                             </a>
-                                            <a class="post__indicator post__indicator--comments button" href="/post.php?post_id=<?= $post['post_id'] ?>"
+                                            <a class="post__indicator post__indicator--comments button"
+                                               href="/post.php?post_id=<?= $post['post_id'] ?>"
                                                title="Комментарии">
                                                 <svg class="post__indicator-icon" width="19" height="17">
                                                     <use xlink:href="#icon-comment"></use>

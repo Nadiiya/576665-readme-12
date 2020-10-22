@@ -73,7 +73,7 @@ if (!empty($messages)) {
     if (!empty($contacts) && empty($current_contact)) {
         reset($contacts);
         $current_contact = key($contacts);
-        header('Location:messages.php?contact_id=' .  $current_contact);
+        header('Location:messages.php?contact_id='.$current_contact);
     }
 }
 
@@ -84,20 +84,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             return check_emptiness($value);
         },
     ];
-    $errors['recipient_id'] = !is_user_exist($link, $current_contact, 'id') || $current_contact === $current_user_id ? 'Невозможно отправить сообщение этому пользователю' : '';
+    $errors['recipient_id'] = !is_user_exist($link, $current_contact,
+        'id') || $current_contact === $current_user_id ? 'Невозможно отправить сообщение этому пользователю' : '';
     $errors = check_data_by_rules($new_message, $rules);
     if (empty($errors)) {
         $sql = 'INSERT INTO messages (content, user_sender_id, user_recipient_id) VALUES (?, ?, ?)';
         $stmt = db_get_prepare_stmt($link, $sql, [
             $new_message['content'],
             $current_user_id,
-            $current_contact
+            $current_contact,
         ]);
         $result = mysqli_stmt_execute($stmt);
         if (!$result) {
-            exit ('error' . mysqli_error($link));
+            exit ('error'.mysqli_error($link));
         }
-        header("Location: /messages.php?contact_id=" . $current_contact);
+        header("Location: /messages.php?contact_id=".$current_contact);
         exit ();
     }
 }
@@ -108,14 +109,14 @@ $page_content = include_template('messages.php', [
     'contacts' => $contacts,
     'conversations' => $conversations,
     'new_message' => $new_message ?? '',
-    'errors' => $errors ?? ''
+    'errors' => $errors ?? '',
 ]);
 
 $layout = include_template('layout.php', [
     'current_user' => $current_user,
     'content' => $page_content,
-    'title' =>  'readme: мой профиль',
-    'total_unread_messages' => $total_unread_messages ?? ''
+    'title' => 'readme: мой профиль',
+    'total_unread_messages' => $total_unread_messages ?? '',
 ]);
 
 print $layout;

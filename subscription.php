@@ -24,9 +24,8 @@ if (is_following($link, $current_user['id'], $author_id)) {
     $message = (new Swift_Message('У вас новый подписчик'))
         ->setFrom(['keks@phpdemo.ru' => 'readme'])
         ->setTo([$author['email'] => $author['login']])
-        ->setBody('Здравствуйте, ' . $author['login'] . '. На вас подписался новый пользователь ' . $current_user['login'] . '. Вот ссылка на его профиль: http://576665-readme-12/profile.php?user_id=' . $current_user['id']);
+        ->setBody('Здравствуйте, '.$author['login'].'. На вас подписался новый пользователь '.$current_user['login'].'. Вот ссылка на его профиль: http://576665-readme-12/profile.php?user_id='.$current_user['id']);
     $result = $mailer->send($message);
-
 }
 $stmt = db_get_prepare_stmt($link, $sql, [$author_id, $current_user['id']]);
 mysqli_stmt_execute($stmt);

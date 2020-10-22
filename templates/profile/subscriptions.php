@@ -14,26 +14,31 @@
                         <a class="post-mini__name user__name" href="/profile.php?user_id=<?= $follower['id'] ?>">
                             <span><?= $follower['login'] ?></span>
                         </a>
-                        <time class="post-mini__time user__additional" datetime="<?= $follower['registered'] ?>"><?= get_relative_date($follower['registered'])?> на сайте</time>
+                        <time class="post-mini__time user__additional"
+                              datetime="<?= $follower['registered'] ?>"><?= get_relative_date($follower['registered']) ?>
+                            на сайте
+                        </time>
                     </div>
                 </div>
                 <div class="post-mini__rating user__rating">
                     <p class="post-mini__rating-item user__rating-item user__rating-item--publications">
-                        <span class="post-mini__rating-amount user__rating-amount"><?= $follower['posts_count']?></span>
-                        <span class="post-mini__rating-text user__rating-text"><?= get_noun_plural_form($follower['posts_count'], 'публикация', 'публикации', 'публикаций')?></span>
+                        <span class="post-mini__rating-amount user__rating-amount"><?= $follower['posts_count'] ?></span>
+                        <span class="post-mini__rating-text user__rating-text"><?= get_noun_plural_form($follower['posts_count'],
+                                'публикация', 'публикации', 'публикаций') ?></span>
                     </p>
                     <p class="post-mini__rating-item user__rating-item user__rating-item--subscribers">
-                        <span class="post-mini__rating-amount user__rating-amount"><?= $follower['followers_count']?></span>
-                        <span class="post-mini__rating-text user__rating-text"><?= get_noun_plural_form($follower['followers_count'], 'подписчик', 'подписчика', 'подписчиков') ?></span>
+                        <span class="post-mini__rating-amount user__rating-amount"><?= $follower['followers_count'] ?></span>
+                        <span class="post-mini__rating-text user__rating-text"><?= get_noun_plural_form($follower['followers_count'],
+                                'подписчик', 'подписчика', 'подписчиков') ?></span>
                     </p>
                 </div>
 
                 <div class="post-mini__user-buttons user__buttons">
-                    <?php if (!$follower['is_current_user']):?>
-                    <a class="post-mini__user-button user__button user__button--subscription button <?= $follower['is_following'] ? 'button--quartz' : 'button--main' ?>"
-                        href="/subscription.php?author_id=<?= $follower['id']?>">
-                        <?= $follower['is_following'] ? 'Отписаться' : 'Подписаться' ?>
-                    </a>
+                    <?php if (!$follower['is_current_user']): ?>
+                        <a class="post-mini__user-button user__button user__button--subscription button <?= $follower['is_following'] ? 'button--quartz' : 'button--main' ?>"
+                           href="/subscription.php?author_id=<?= $follower['id'] ?>">
+                            <?= $follower['is_following'] ? 'Отписаться' : 'Подписаться' ?>
+                        </a>
                     <?php endif; ?>
                 </div>
             </li>

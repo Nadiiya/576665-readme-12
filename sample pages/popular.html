@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>readme: популярное</title>
-    <link rel="stylesheet" href="../css/main.css">
+    <link href="../css/main.css" rel="stylesheet">
 </head>
 <body class="page">
 <div style="display: none">
@@ -83,18 +83,18 @@
     <div class="header__wrapper container">
         <div class="header__logo-wrapper">
             <a class="header__logo-link" href="main.html">
-                <img class="header__logo" src="../img/logo.svg" alt="Логотип readme" width="128" height="24">
+                <img alt="Логотип readme" class="header__logo" height="24" src="../img/logo.svg" width="128">
             </a>
             <p class="header__topic">
                 micro blogging
             </p>
         </div>
-        <form class="header__search-form form" action="#" method="get">
+        <form action="#" class="header__search-form form" method="get">
             <div class="header__search">
                 <label class="visually-hidden">Поиск</label>
                 <input class="header__search-input form__input" type="search">
                 <button class="header__search-button button" type="submit">
-                    <svg class="header__search-icon" width="18" height="18">
+                    <svg class="header__search-icon" height="18" width="18">
                         <use xlink:href="#icon-search"></use>
                     </svg>
                     <span class="visually-hidden">Начать поиск</span>
@@ -124,11 +124,12 @@
                     <li class="header__profile">
                         <a class="header__profile-link" href="#">
                             <div class="header__avatar-wrapper">
-                                <img class="header__profile-avatar" src="../img/userpic-medium.jpg" alt="Аватар профиля">
+                                <img alt="Аватар профиля" class="header__profile-avatar"
+                                     src="../img/userpic-medium.jpg">
                             </div>
                             <div class="header__profile-name">
                                 <span>Антон Глуханько</span>
-                                <svg class="header__link-arrow" width="10" height="6">
+                                <svg class="header__link-arrow" height="6" width="10">
                                     <use xlink:href="#icon-arrow-right-ad"></use>
                                 </svg>
                             </div>
@@ -183,7 +184,7 @@
                     <li class="sorting__item sorting__item--popular">
                         <a class="sorting__link sorting__link--active" href="#">
                             <span>Популярность</span>
-                            <svg class="sorting__icon" width="10" height="12">
+                            <svg class="sorting__icon" height="12" width="10">
                                 <use xlink:href="#icon-sort"></use>
                             </svg>
                         </a>
@@ -191,7 +192,7 @@
                     <li class="sorting__item">
                         <a class="sorting__link" href="#">
                             <span>Лайки</span>
-                            <svg class="sorting__icon" width="10" height="12">
+                            <svg class="sorting__icon" height="12" width="10">
                                 <use xlink:href="#icon-sort"></use>
                             </svg>
                         </a>
@@ -199,7 +200,7 @@
                     <li class="sorting__item">
                         <a class="sorting__link" href="#">
                             <span>Дата</span>
-                            <svg class="sorting__icon" width="10" height="12">
+                            <svg class="sorting__icon" height="12" width="10">
                                 <use xlink:href="#icon-sort"></use>
                             </svg>
                         </a>
@@ -218,7 +219,7 @@
                     <li class="popular__filters-item filters__item">
                         <a class="filters__button filters__button--photo button" href="#">
                             <span class="visually-hidden">Фото</span>
-                            <svg class="filters__icon" width="22" height="18">
+                            <svg class="filters__icon" height="18" width="22">
                                 <use xlink:href="#icon-filter-photo"></use>
                             </svg>
                         </a>
@@ -226,7 +227,7 @@
                     <li class="popular__filters-item filters__item">
                         <a class="filters__button filters__button--video button" href="#">
                             <span class="visually-hidden">Видео</span>
-                            <svg class="filters__icon" width="24" height="16">
+                            <svg class="filters__icon" height="16" width="24">
                                 <use xlink:href="#icon-filter-video"></use>
                             </svg>
                         </a>
@@ -234,7 +235,7 @@
                     <li class="popular__filters-item filters__item">
                         <a class="filters__button filters__button--text button" href="#">
                             <span class="visually-hidden">Текст</span>
-                            <svg class="filters__icon" width="20" height="21">
+                            <svg class="filters__icon" height="21" width="20">
                                 <use xlink:href="#icon-filter-text"></use>
                             </svg>
                         </a>
@@ -242,7 +243,7 @@
                     <li class="popular__filters-item filters__item">
                         <a class="filters__button filters__button--quote button" href="#">
                             <span class="visually-hidden">Цитата</span>
-                            <svg class="filters__icon" width="21" height="20">
+                            <svg class="filters__icon" height="20" width="21">
                                 <use xlink:href="#icon-filter-quote"></use>
                             </svg>
                         </a>
@@ -250,7 +251,7 @@
                     <li class="popular__filters-item filters__item">
                         <a class="filters__button filters__button--link button" href="#">
                             <span class="visually-hidden">Ссылка</span>
-                            <svg class="filters__icon" width="21" height="18">
+                            <svg class="filters__icon" height="18" width="21">
                                 <use xlink:href="#icon-filter-link"></use>
                             </svg>
                         </a>
@@ -275,8 +276,8 @@
                     <div class="post__author">
                         <a class="post__author-link" href="#" title="Автор">
                             <div class="post__avatar-wrapper">
-                                <img class="post__author-avatar" src="../img/userpic-larisa-small.jpg"
-                                     alt="Аватар пользователя">
+                                <img alt="Аватар пользователя" class="post__author-avatar"
+                                     src="../img/userpic-larisa-small.jpg">
                             </div>
                             <div class="post__info">
                                 <b class="post__author-name">Лариса Роговая</b>
@@ -287,18 +288,18 @@
                     <div class="post__indicators">
                         <div class="post__buttons">
                             <a class="post__indicator post__indicator--likes button" href="#" title="Лайк">
-                                <svg class="post__indicator-icon" width="20" height="17">
+                                <svg class="post__indicator-icon" height="17" width="20">
                                     <use xlink:href="#icon-heart"></use>
                                 </svg>
-                                <svg class="post__indicator-icon post__indicator-icon--like-active" width="20"
-                                     height="17">
+                                <svg class="post__indicator-icon post__indicator-icon--like-active" height="17"
+                                     width="20">
                                     <use xlink:href="#icon-heart-active"></use>
                                 </svg>
                                 <span>250</span>
                                 <span class="visually-hidden">количество лайков</span>
                             </a>
                             <a class="post__indicator post__indicator--comments button" href="#" title="Комментарии">
-                                <svg class="post__indicator-icon" width="19" height="17">
+                                <svg class="post__indicator-icon" height="17" width="19">
                                     <use xlink:href="#icon-comment"></use>
                                 </svg>
                                 <span>25</span>
@@ -316,10 +317,10 @@
                 <div class="post__main">
                     <div class="post-video__block">
                         <div class="post-video__preview">
-                            <img src="../img/coast-medium.jpg" alt="Превью к видео" width="360" height="188">
+                            <img alt="Превью к видео" height="188" src="../img/coast-medium.jpg" width="360">
                         </div>
-                        <a href="post-details.html" class="post-video__play-big button">
-                            <svg class="post-video__play-big-icon" width="14" height="14">
+                        <a class="post-video__play-big button" href="post-details.html">
+                            <svg class="post-video__play-big-icon" height="14" width="14">
                                 <use xlink:href="#icon-video-play-big"></use>
                             </svg>
                             <span class="visually-hidden">Запустить проигрыватель</span>
@@ -330,8 +331,8 @@
                     <div class="post__author">
                         <a class="post__author-link" href="#" title="Автор">
                             <div class="post__avatar-wrapper">
-                                <img class="post__author-avatar" src="../img/userpic-larisa-small.jpg"
-                                     alt="Аватар пользователя">
+                                <img alt="Аватар пользователя" class="post__author-avatar"
+                                     src="../img/userpic-larisa-small.jpg">
                             </div>
                             <div class="post__info">
                                 <b class="post__author-name">Лариса Роговая</b>
@@ -342,18 +343,18 @@
                     <div class="post__indicators">
                         <div class="post__buttons">
                             <a class="post__indicator post__indicator--likes button" href="#" title="Лайк">
-                                <svg class="post__indicator-icon" width="20" height="17">
+                                <svg class="post__indicator-icon" height="17" width="20">
                                     <use xlink:href="#icon-heart"></use>
                                 </svg>
-                                <svg class="post__indicator-icon post__indicator-icon--like-active" width="20"
-                                     height="17">
+                                <svg class="post__indicator-icon post__indicator-icon--like-active" height="17"
+                                     width="20">
                                     <use xlink:href="#icon-heart-active"></use>
                                 </svg>
                                 <span>250</span>
                                 <span class="visually-hidden">количество лайков</span>
                             </a>
                             <a class="post__indicator post__indicator--comments button" href="#" title="Комментарии">
-                                <svg class="post__indicator-icon" width="19" height="17">
+                                <svg class="post__indicator-icon" height="17" width="19">
                                     <use xlink:href="#icon-comment"></use>
                                 </svg>
                                 <span>25</span>
@@ -384,8 +385,8 @@
                     <div class="post__author">
                         <a class="post__author-link" href="#" title="Автор">
                             <div class="post__avatar-wrapper">
-                                <img class="post__author-avatar" src="../img/userpic-larisa-small.jpg"
-                                     alt="Аватар пользователя">
+                                <img alt="Аватар пользователя" class="post__author-avatar"
+                                     src="../img/userpic-larisa-small.jpg">
                             </div>
                             <div class="post__info">
                                 <b class="post__author-name">Лариса Роговая</b>
@@ -396,18 +397,18 @@
                     <div class="post__indicators">
                         <div class="post__buttons">
                             <a class="post__indicator post__indicator--likes button" href="#" title="Лайк">
-                                <svg class="post__indicator-icon" width="20" height="17">
+                                <svg class="post__indicator-icon" height="17" width="20">
                                     <use xlink:href="#icon-heart"></use>
                                 </svg>
-                                <svg class="post__indicator-icon post__indicator-icon--like-active" width="20"
-                                     height="17">
+                                <svg class="post__indicator-icon post__indicator-icon--like-active" height="17"
+                                     width="20">
                                     <use xlink:href="#icon-heart-active"></use>
                                 </svg>
                                 <span>250</span>
                                 <span class="visually-hidden">количество лайков</span>
                             </a>
                             <a class="post__indicator post__indicator--comments button" href="#" title="Комментарии">
-                                <svg class="post__indicator-icon" width="19" height="17">
+                                <svg class="post__indicator-icon" height="17" width="19">
                                     <use xlink:href="#icon-comment"></use>
                                 </svg>
                                 <span>25</span>
@@ -427,7 +428,7 @@
                         <a class="post-link__external" href="http://www.vitadental.ru" title="Перейти по ссылке">
                             <div class="post-link__info-wrapper">
                                 <div class="post-link__icon-wrapper">
-                                    <img src="https://www.google.com/s2/favicons?domain=vitadental.ru" alt="Иконка">
+                                    <img alt="Иконка" src="https://www.google.com/s2/favicons?domain=vitadental.ru">
                                 </div>
                                 <div class="post-link__info">
                                     <h3>Стоматология «Вита»</h3>
@@ -441,8 +442,8 @@
                     <div class="post__author">
                         <a class="post__author-link" href="#" title="Автор">
                             <div class="post__avatar-wrapper">
-                                <img class="post__author-avatar" src="../img/userpic-larisa-small.jpg"
-                                     alt="Аватар пользователя">
+                                <img alt="Аватар пользователя" class="post__author-avatar"
+                                     src="../img/userpic-larisa-small.jpg">
                             </div>
                             <div class="post__info">
                                 <b class="post__author-name">Лариса Роговая</b>
@@ -453,18 +454,18 @@
                     <div class="post__indicators">
                         <div class="post__buttons">
                             <a class="post__indicator post__indicator--likes button" href="#" title="Лайк">
-                                <svg class="post__indicator-icon" width="20" height="17">
+                                <svg class="post__indicator-icon" height="17" width="20">
                                     <use xlink:href="#icon-heart"></use>
                                 </svg>
-                                <svg class="post__indicator-icon post__indicator-icon--like-active" width="20"
-                                     height="17">
+                                <svg class="post__indicator-icon post__indicator-icon--like-active" height="17"
+                                     width="20">
                                     <use xlink:href="#icon-heart-active"></use>
                                 </svg>
                                 <span>250</span>
                                 <span class="visually-hidden">количество лайков</span>
                             </a>
                             <a class="post__indicator post__indicator--comments button" href="#" title="Комментарии">
-                                <svg class="post__indicator-icon" width="19" height="17">
+                                <svg class="post__indicator-icon" height="17" width="19">
                                     <use xlink:href="#icon-comment"></use>
                                 </svg>
                                 <span>25</span>
@@ -481,15 +482,15 @@
                 </header>
                 <div class="post__main">
                     <div class="post-photo__image-wrapper">
-                        <img src="../img/rock-medium.jpg" alt="Фото от пользователя" width="360" height="240">
+                        <img alt="Фото от пользователя" height="240" src="../img/rock-medium.jpg" width="360">
                     </div>
                 </div>
                 <footer class="post__footer">
                     <div class="post__author">
                         <a class="post__author-link" href="#" title="Автор">
                             <div class="post__avatar-wrapper">
-                                <img class="post__author-avatar" src="../img/userpic-larisa-small.jpg"
-                                     alt="Аватар пользователя">
+                                <img alt="Аватар пользователя" class="post__author-avatar"
+                                     src="../img/userpic-larisa-small.jpg">
                             </div>
                             <div class="post__info">
                                 <b class="post__author-name">Лариса Роговая</b>
@@ -500,18 +501,18 @@
                     <div class="post__indicators">
                         <div class="post__buttons">
                             <a class="post__indicator post__indicator--likes button" href="#" title="Лайк">
-                                <svg class="post__indicator-icon" width="20" height="17">
+                                <svg class="post__indicator-icon" height="17" width="20">
                                     <use xlink:href="#icon-heart"></use>
                                 </svg>
-                                <svg class="post__indicator-icon post__indicator-icon--like-active" width="20"
-                                     height="17">
+                                <svg class="post__indicator-icon post__indicator-icon--like-active" height="17"
+                                     width="20">
                                     <use xlink:href="#icon-heart-active"></use>
                                 </svg>
                                 <span>250</span>
                                 <span class="visually-hidden">количество лайков</span>
                             </a>
                             <a class="post__indicator post__indicator--comments button" href="#" title="Комментарии">
-                                <svg class="post__indicator-icon" width="19" height="17">
+                                <svg class="post__indicator-icon" height="17" width="19">
                                     <use xlink:href="#icon-comment"></use>
                                 </svg>
                                 <span>25</span>
@@ -538,8 +539,8 @@
                     <div class="post__author">
                         <a class="post__author-link" href="#" title="Автор">
                             <div class="post__avatar-wrapper">
-                                <img class="post__author-avatar" src="../img/userpic-larisa-small.jpg"
-                                     alt="Аватар пользователя">
+                                <img alt="Аватар пользователя" class="post__author-avatar"
+                                     src="../img/userpic-larisa-small.jpg">
                             </div>
                             <div class="post__info">
                                 <b class="post__author-name">Лариса Роговая</b>
@@ -550,18 +551,18 @@
                     <div class="post__indicators">
                         <div class="post__buttons">
                             <a class="post__indicator post__indicator--likes button" href="#" title="Лайк">
-                                <svg class="post__indicator-icon" width="20" height="17">
+                                <svg class="post__indicator-icon" height="17" width="20">
                                     <use xlink:href="#icon-heart"></use>
                                 </svg>
-                                <svg class="post__indicator-icon post__indicator-icon--like-active" width="20"
-                                     height="17">
+                                <svg class="post__indicator-icon post__indicator-icon--like-active" height="17"
+                                     width="20">
                                     <use xlink:href="#icon-heart-active"></use>
                                 </svg>
                                 <span>250</span>
                                 <span class="visually-hidden">количество лайков</span>
                             </a>
                             <a class="post__indicator post__indicator--comments button" href="#" title="Комментарии">
-                                <svg class="post__indicator-icon" width="19" height="17">
+                                <svg class="post__indicator-icon" height="17" width="19">
                                     <use xlink:href="#icon-comment"></use>
                                 </svg>
                                 <span>25</span>
@@ -626,7 +627,7 @@
                 <div class="footer__copyright">
                     <a class="footer__copyright-link" href="https://htmlacademy.ru">
                         <span>Разработано HTML Academy</span>
-                        <svg class="footer__copyright-logo" width="27" height="34">
+                        <svg class="footer__copyright-logo" height="34" width="27">
                             <use xlink:href="#icon-htmlacademy"></use>
                         </svg>
                     </a>

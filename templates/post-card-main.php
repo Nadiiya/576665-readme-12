@@ -18,7 +18,7 @@ switch ($post['class']):
         </div>
     </div>
     <?php break; ?>
-    <?php case QUOTE: ?>
+<?php case QUOTE: ?>
     <blockquote>
         <p>
             <?= esc($post['content']) ?>
@@ -26,7 +26,7 @@ switch ($post['class']):
         <cite><?= esc($post['author_quote']) ?></cite>
     </blockquote>
     <?php break; ?>
-    <?php case LINK: ?>
+<?php case LINK: ?>
     <div class="post-link__wrapper">
         <a class="post-link__external" href="<?= esc($post['link']) ?>"
            title="Перейти по ссылке">
@@ -45,7 +45,7 @@ switch ($post['class']):
         </a>
     </div>
     <?php break; ?>
-    <?php case PHOTO: ?>
+<?php case PHOTO: ?>
     <h2>
         <a href="/post.php?post_id=<?= $post['post_id'] ?>"><?= esc($post['title']) ?></a>
     </h2>

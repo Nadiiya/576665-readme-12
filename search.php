@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     if (!$result) {
-        exit ('error' . mysqli_error($link));
+        exit ('error'.mysqli_error($link));
     }
     $posts = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
@@ -48,21 +48,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
         foreach ($posts as $key => $post) {
             $posts[$key]['tags'] = $posts_tags[$posts[$key]['post_id']] ?? '';
-            $posts[$key]['is_liked'] = is_liked($link, (int) $posts[$key]['post_id'], $current_user['id']);
+            $posts[$key]['is_liked'] = is_liked($link, (int)$posts[$key]['post_id'], $current_user['id']);
         }
     }
 }
 
 $page_content = include_template('search-results.php', [
     'posts' => $posts ?? '',
-    'search_query' => $search_query
+    'search_query' => $search_query,
 ]);
 
 $layout = include_template('layout.php', [
     'current_user' => $current_user,
     'content' => $page_content,
     'title' => 'readme: результаты поиска',
-    'search_query' => $search_query
+    'search_query' => $search_query,
 ]);
 
 print $layout;

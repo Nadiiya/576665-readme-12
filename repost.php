@@ -16,13 +16,12 @@ if (!is_post_exist($link, (int)$post_id)) {
 }
 
 
-
 $sql = 'SELECT posts.* FROM posts WHERE post_id = ?';
 $stmt = db_get_prepare_stmt($link, $sql, [$post_id]);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 if (!$result) {
-    exit('error' . mysqli_error($link));
+    exit('error'.mysqli_error($link));
 }
 $repost_data = mysqli_fetch_assoc($result);
 if (!empty($repost_data['original_id']) || $repost_data['user_id'] === $current_user['id']) {
@@ -35,6 +34,6 @@ $repost_data['original_id'] = $repost_data['post_id'];
 
 create_post_sql($link, $repost_data);
 
-header("Location: /profile.php?user_id=" . $current_user['id']);
+header("Location: /profile.php?user_id=".$current_user['id']);
 exit();
 

@@ -12,7 +12,7 @@ if (file_exists('config.php')) {
 }
 
 if (!$link) {
-    exit('error' . mysqli_connect_error());
+    exit('error'.mysqli_connect_error());
 }
 
 /*set the default timezone*/
@@ -29,3 +29,4 @@ define("MIN_LENGTH_PASSWORD", 6);
 define("MAX_LENGTH_PASSWORD", 60);
 define("MAX_LENGTH_TAG", 30);
 define("MAX_DATABASE_VARCHAR", 160);
+

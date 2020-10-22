@@ -1,9 +1,10 @@
 <?php
-require_once ('init.php');
-require_once ('helpers.php');
-require_once ('functions.php');
-require_once ('db_requests.php');
-require_once ('validation.php');
+
+require_once('init.php');
+require_once('helpers.php');
+require_once('functions.php');
+require_once('db_requests.php');
+require_once('validation.php');
 
 if (isset($_SESSION['user'])) {
     header('Location: /feed.php');
@@ -16,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $authorization_data = filter_input_array(INPUT_POST, [
         'login' => FILTER_DEFAULT,
-        'password' => FILTER_DEFAULT
+        'password' => FILTER_DEFAULT,
     ], true);
 
     foreach ($authorization_data as $key => $value) {
@@ -29,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         },
         'password' => function ($value) {
             return check_emptiness($value);
-        }
+        },
     ];
 
     $errors = check_data_by_rules($authorization_data, $rules);
@@ -41,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = mysqli_stmt_get_result($stmt);
 
         if (!$result) {
-            exit('error' . mysqli_error($link));
+            exit('error'.mysqli_error($link));
         }
 
         $current_user = mysqli_fetch_array($result, MYSQLI_ASSOC);
@@ -63,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 $layout_content = include_template('index.php', [
     'authorization_data' => !empty($authorization_data) ? $authorization_data : '',
-    'errors' => !empty($errors) ? $errors : ''
+    'errors' => !empty($errors) ? $errors : '',
 ]);
 
 print ($layout_content);

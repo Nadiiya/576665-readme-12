@@ -35,8 +35,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'img' => FILTER_DEFAULT,
         'video' => FILTER_DEFAULT,
         'link' => FILTER_DEFAULT,
-        'post_type_id' =>FILTER_DEFAULT,
-        'tags' => FILTER_DEFAULT
+        'post_type_id' => FILTER_DEFAULT,
+        'tags' => FILTER_DEFAULT,
     ], true);
 
     foreach ($new_post as $key => $value) {
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'img' => 'Ссылка из интернета',
             'video' => 'Ссылка на YOUTUBE',
             'link' => 'Ссылка',
-            'tags' => 'Теги'
+            'tags' => 'Теги',
         ];
     }
 
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $headers = get_headers($new_post['img'], 1);
             $type = $headers['Content-Type'];
             $extension = substr($type, strpos($type, '/') + 1);
-            $path = 'uploads/' . uniqid() . ".{$extension}";
+            $path = 'uploads/'.uniqid().".{$extension}";
             $new_post['img'] = $path;
             file_put_contents($path, $data);
         }
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 ->setBody("Здравствуйте, {$follower['login']}. Пользователь {$current_user['login']} только что опубликовал новую запись: {$new_post['title']}. Посмотрите её на странице пользователя: http://576665-readme-12/profile.php?user_id={$current_user['id']}");
             $mailer->send($message);
         }
-        header('Location: /post.php?post_id=' . $post_id);
+        header('Location: /post.php?post_id='.$post_id);
         exit();
     }
 }
@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $adding_post_content = include_template("/adding-post/adding-post-{$active_post_type}.php", [
     'post_types' => $post_types,
     'new_post' => !empty($new_post) ? $new_post : '',
-    'errors' => !empty($errors) ? $errors : ''
+    'errors' => !empty($errors) ? $errors : '',
 ]);
 
 $page_content = include_template('adding-post.php', [
@@ -130,14 +130,13 @@ $page_content = include_template('adding-post.php', [
     'adding_post_content' => $adding_post_content,
     'new_post' => !empty($new_post) ? $new_post : '',
     'errors' => !empty($errors) ? $errors : '',
-    'error_titles' => !empty($error_titles) ? $error_titles : ''
+    'error_titles' => !empty($error_titles) ? $error_titles : '',
 ]);
 
 $layout_content = include_template('layout.php', [
     'current_user' => $current_user,
     'content' => $page_content,
-    'title' => 'readme: добавление публикации'
-
+    'title' => 'readme: добавление публикации',
 ]);
 
 print ($layout_content);

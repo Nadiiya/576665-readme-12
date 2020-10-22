@@ -45,7 +45,7 @@ if (!empty($posts)) {
         $posts[$key]['tags'] = $posts_tags[$posts[$key]['post_id']] ?? '';
         $original_id = $posts[$key]['original_id'] ?? $posts[$key]['post_id'];
         $posts[$key]['reposts_count'] = get_posts_count($link, ['original_id' => $original_id]);
-        if ($original_id !==  $posts[$key]['post_id']) {
+        if ($original_id !== $posts[$key]['post_id']) {
             $posts[$key]['original_post_data'] = get_repost_data($link, $original_id);
         }
     }
@@ -56,19 +56,19 @@ $tabs_content = include_template("profile/{$current_tab}.php", [
     'posts' => $posts ?? '',
     'posts_tags' => $posts_tags ?? '',
     'followers' => $profile_followers ?? '',
-    'posts_likes' => $posts_likes ?? ''
+    'posts_likes' => $posts_likes ?? '',
 ]);
 
 $page_content = include_template('profile.php', [
     'current_tab' => $current_tab,
     'profile_data' => $profile_data,
-    'tabs_content' => $tabs_content
+    'tabs_content' => $tabs_content,
 ]);
 
 $layout = include_template('layout.php', [
     'current_user' => $current_user,
     'content' => $page_content,
-    'title' => 'readme: мой профиль'
+    'title' => 'readme: мой профиль',
 ]);
 
 print $layout;

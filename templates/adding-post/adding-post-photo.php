@@ -4,7 +4,7 @@
         <input class="adding-post__input form__input" id="photo-url" type="text" name="img"
                placeholder="Введите ссылку" value="<?= !empty($new_post['img']) ? esc($new_post['img']) : '' ?>">
         <button class="form__error-button button" type="button">!<span
-                class="visually-hidden">Информация об ошибке</span></button>
+                    class="visually-hidden">Информация об ошибке</span></button>
         <div class="form__error-text">
             <h3 class="form__error-title">Заголовок сообщения</h3>
             <p class="form__error-desc"><?= !empty($errors['img']) ? $errors['img'] : '' ?></p>

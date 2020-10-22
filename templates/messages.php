@@ -24,7 +24,7 @@
                                                 20)) : '' ?>
                                         </p>
                                         <time class="messages__preview-time"
-                                              datetime="<?= !empty($contact['last_message']) ?  $contact['last_message']['date'] : '' ?>">
+                                              datetime="<?= !empty($contact['last_message']) ? $contact['last_message']['date'] : '' ?>">
                                             <?= !empty($contact['last_message']) ? get_relative_date($contact['last_message']['date']) : '' ?>
                                         </time>
                                     </div>
@@ -38,33 +38,35 @@
         <div class="messages__chat">
             <div class="messages__chat-wrapper">
                 <?php if (!empty($conversations)): ?>
-                    <?php foreach ($conversations as $contact_id => $conversation): ?>
-                        <ul class="messages__list tabs__content <?= $current_contact === $contact_id ? 'tabs__content--active' : '' ?>">
-                            <?php foreach ($conversation as $key => $message): ?>
-                                <li class="messages__item <?= $message['user_sender_id'] === $current_user['id'] ? 'messages__item--my' : '' ?>">
-                                    <div class="messages__info-wrapper">
-                                        <div class="messages__item-avatar">
-                                            <a class="messages__author-link" href="/profile.php?user_id=<?= $message['user_sender_id']?>">
-                                                <img class="messages__avatar" src="<?= esc($message['sender_picture'])?>"
-                                                     alt="Аватар пользователя">
-                                            </a>
-                                        </div>
-                                        <div class="messages__item-info">
-                                            <a class="messages__author" href="/profile.php?user_id=<?= $message['user_sender_id'] ?>">
-                                                <?= esc($message['sender_name'])?>
-                                            </a>
-                                            <time class="messages__time" datetime="<?= $message['date'] ?>">
-                                                <?= get_relative_date($message['date'])?>
-                                            </time>
-                                        </div>
+                <?php foreach ($conversations as $contact_id => $conversation): ?>
+                    <ul class="messages__list tabs__content <?= $current_contact === $contact_id ? 'tabs__content--active' : '' ?>">
+                        <?php foreach ($conversation as $key => $message): ?>
+                            <li class="messages__item <?= $message['user_sender_id'] === $current_user['id'] ? 'messages__item--my' : '' ?>">
+                                <div class="messages__info-wrapper">
+                                    <div class="messages__item-avatar">
+                                        <a class="messages__author-link"
+                                           href="/profile.php?user_id=<?= $message['user_sender_id'] ?>">
+                                            <img class="messages__avatar" src="<?= esc($message['sender_picture']) ?>"
+                                                 alt="Аватар пользователя">
+                                        </a>
                                     </div>
-                                    <p class="messages__text">
-                                        <?= esc($message['content']) ?>
-                                    </p>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    <?php endforeach; ?>
+                                    <div class="messages__item-info">
+                                        <a class="messages__author"
+                                           href="/profile.php?user_id=<?= $message['user_sender_id'] ?>">
+                                            <?= esc($message['sender_name']) ?>
+                                        </a>
+                                        <time class="messages__time" datetime="<?= $message['date'] ?>">
+                                            <?= get_relative_date($message['date']) ?>
+                                        </time>
+                                    </div>
+                                </div>
+                                <p class="messages__text">
+                                    <?= esc($message['content']) ?>
+                                </p>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endforeach; ?>
             </div>
             <?php endif; ?>
             <?php if (!empty($contacts)): ?>
@@ -76,8 +78,8 @@
                         </div>
                         <div class="form__input-section <?= !empty($errors) ? 'form__input-section--error' : '' ?> ">
                             <textarea class="comments__textarea form__textarea form__input" id="comment"
-                                  placeholder="Ваше сообщение"
-                                  name="content"><?= !empty($new_message['content']) ? esc($new_message['content']) : '' ?>
+                                      placeholder="Ваше сообщение"
+                                      name="content"><?= !empty($new_message['content']) ? esc($new_message['content']) : '' ?>
                             </textarea>
                             <label for="comment" class="visually-hidden">Ваше сообщение</label>
                             <input type="hidden" name="recipient_id" value="<?= $current_contact ?? '' ?>">

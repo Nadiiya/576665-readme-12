@@ -17,7 +17,7 @@ $sorting = !empty($_GET['sorting']) ? $_GET['sorting'] : 'view_count';
 $order = !empty($_GET['order']) ? $_GET['order'] : 'DESC';
 
 $params = [
-  'post_type_id' => $post_type
+    'post_type_id' => $post_type,
 ];
 $posts_counts = get_posts_count($link, $params);
 if ($posts_counts) {
@@ -38,13 +38,13 @@ $page_content = include_template('popular.php', [
     'order' => $order,
     'pages_count' => $pages_count ?? '',
     'prev_page' => $prev_page ?? '',
-    'next_page' => $next_page ?? ''
+    'next_page' => $next_page ?? '',
 ]);
 
 $layout_content = include_template('layout.php', [
     'current_user' => $current_user,
     'content' => $page_content,
-    'title' => 'readme: популярное'
+    'title' => 'readme: популярное',
 ]);
 
 print ($layout_content);

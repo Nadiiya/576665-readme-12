@@ -13,9 +13,9 @@ $current_user = $_SESSION['user'];
 if (isset($_GET['post_id'])) {
     $post_id = filter_input(INPUT_GET, 'post_id');
     $post = get_posts_by_parameters($link, [
-        'post_id' => $post_id
+        'post_id' => $post_id,
     ],
-    $current_user['id']);
+        $current_user['id']);
 
     if (empty($post)) {
         header("HTTP/1.0 404 Not Found");
@@ -36,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $errors = [];
     $new_comment = filter_input_array(INPUT_POST, [
         'comment' => FILTER_DEFAULT,
-        'post_id' => FILTER_VALIDATE_INT
-    ] , true);
+        'post_id' => FILTER_VALIDATE_INT,
+    ], true);
 
     if (!is_post_exist($link, $new_comment['post_id'])) {
         header("HTTP/1.0 404 Not Found");
@@ -47,9 +47,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $new_comment['comment'] = trim($new_comment['comment']);
 
     $rules = [
-        'comment' => function($value) {
-        return comment_validate($value);
-        }
+        'comment' => function ($value) {
+            return comment_validate($value);
+        },
     ];
     $errors = check_data_by_rules($new_comment, $rules);
 
@@ -64,9 +64,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = mysqli_stmt_execute($stmt);
 
         if (!$result) {
-            exit ('error' . mysqli_error($link));
+            exit ('error'.mysqli_error($link));
         }
-        header('Location: /profile.php?user_id=' . $author_data['id']);
+        header('Location: /profile.php?user_id='.$author_data['id']);
         exit();
     }
 }
@@ -75,7 +75,7 @@ $comments = get_comments($link, $post_id);
 $post['comments_count'] = count($comments);
 
 $post_content = include_template("post/post-{$post['class']}.php", [
-    'post' => $post
+    'post' => $post,
 ]);
 
 $page_content = include_template('post.php', [
@@ -85,13 +85,14 @@ $page_content = include_template('post.php', [
     'new_comment' => $new_comment ?? '',
     'errors' => $errors ?? '',
     'comments' => $comments ?? '',
-    'author_data' => $author_data
+    'author_data' => $author_data,
 ]);
 
 $layout_content = include_template('layout.php', [
     'current_user' => $current_user,
     'content' => $page_content,
-    'title' => 'readme: публикация'
+    'title' => 'readme: публикация',
 ]);
 
 print ($layout_content);
+
