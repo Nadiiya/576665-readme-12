@@ -193,8 +193,8 @@ function tags_validate(string $tags_value)
             }
             if (!empty($invalid_tags)) {
                 $count_invalid_tags = count($invalid_tags);
-                $tag_error = get_noun_plural_form($count_invalid_tags, 'Тег ', 'Теги ', 'Теги ').implode(', ',
-                        $invalid_tags).get_noun_plural_form($count_invalid_tags, ' не корректен', ' не корректны',
+                $tag_error = get_noun_plural_form($count_invalid_tags, 'Тег ', 'Теги ', 'Теги ').esc(implode(', ',
+                        $invalid_tags)).get_noun_plural_form($count_invalid_tags, ' не корректен', ' не корректны',
                         ' не корректны');
             }
         }
